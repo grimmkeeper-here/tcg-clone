@@ -1,11 +1,13 @@
 // components/Login.tsx
 import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 import loginService from '@/services/loginService';
 
 const LoginComponent: React.FC = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
+    const router = useRouter();
 
     const handleUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setUsername(e.target.value);
@@ -27,7 +29,7 @@ const LoginComponent: React.FC = () => {
         console.log('Password:', password);
         const isAuthenticated = await loginService(username, password);
         if (isAuthenticated) {
-
+            router.push('/otp/send');
         }
     };
 
