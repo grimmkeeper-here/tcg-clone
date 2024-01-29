@@ -87,6 +87,7 @@ const Home: React.FC = () => {
                     // Handle successful response
                     const result = await response.json();
                     console.log('API response:', result);
+                    alert('Send success');
                 } else {
                     // Handle error response
                     console.error('Failed to call API');
