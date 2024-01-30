@@ -25,8 +25,6 @@ const LoginComponent: React.FC = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         // Add your login logic here
-        console.log('Username:', username);
-        console.log('Password:', password);
         const isAuthenticated = await loginService(username, password);
         if (isAuthenticated) {
             router.push('/otp/send');

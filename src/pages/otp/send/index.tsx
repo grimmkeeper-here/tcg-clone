@@ -62,11 +62,6 @@ const Home: React.FC = () => {
     }, []);
 
     const handleSubmit = (companyID: string, phoneNumber: string, otp: string) => {
-        // Handle form submission logic
-        console.log('Company ID:', companyID);
-        console.log('Phone Number:', phoneNumber);
-        console.log('OTP:', otp);
-
         const fetchData = async () => {
             try {
                 // Make API call using formData
